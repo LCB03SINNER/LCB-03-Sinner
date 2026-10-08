@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serum Web Browser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="browser-container">
+        <!-- Browser Toolbar -->
+        <div class="toolbar">
+            <div class="nav-buttons">
+                <button id="back-btn" class="nav-btn" title="Back">
+                    ← Back
+                </button>
+                <button id="forward-btn" class="nav-btn" title="Forward">
+                    Forward →
+                </button>
+                <button id="refresh-btn" class="nav-btn" title="Refresh">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <!-- Address Bar -->
+            <div class="address-bar-container">
+                <input 
+                    type="text" 
+                    id="address-bar" 
+                    class="address-bar" 
+                    placeholder="Enter URL or search..."
+                    value="https://example.com"
+                >
+                <button id="go-btn" class="go-btn">Go</button>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-container">
+            <div class="tabs" id="tabs">
+                <div class="tab active" data-tab-id="1">
+                    <span class="tab-title">New Tab</span>
+                    <button class="tab-close">×</button>
+                </div>
+            </div>
+            <button id="new-tab-btn" class="new-tab-btn">+</button>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <iframe id="content-frame" class="content-frame" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" src="about:blank"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
