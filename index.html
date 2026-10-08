@@ -29,17 +29,30 @@
                     id="address-bar" 
                     class="address-bar" 
                     placeholder="Enter URL or search..."
-                    value="https://example.com"
+                    value="about:home"
                 >
                 <button id="go-btn" class="go-btn">Go</button>
             </div>
+
+            <!-- Bookmarks Button -->
+            <button id="bookmarks-btn" class="nav-btn" title="Show/Hide Bookmarks">
+                ★ Bookmarks
+            </button>
+        </div>
+
+        <!-- Bookmarks Bar -->
+        <div class="bookmarks-bar" id="bookmarks-bar" style="display: none;">
+            <div class="bookmarks-list" id="bookmarks-list">
+                <!-- Bookmarks will be inserted here -->
+            </div>
+            <button id="add-bookmark-btn" class="add-bookmark-btn">+ Add</button>
         </div>
 
         <!-- Tabs -->
         <div class="tabs-container">
             <div class="tabs" id="tabs">
                 <div class="tab active" data-tab-id="1">
-                    <span class="tab-title">New Tab</span>
+                    <span class="tab-title">Home</span>
                     <button class="tab-close">×</button>
                 </div>
             </div>
@@ -48,7 +61,67 @@
 
         <!-- Content Area -->
         <div class="content-area">
-            <iframe id="content-frame" class="content-frame" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" src="about:blank"></iframe>
+            <!-- Home Page -->
+            <div id="home-page" class="home-page">
+                <div class="home-container">
+                    <h1>Serum Browser</h1>
+                    <p class="tagline">A lightweight web browser</p>
+                    
+                    <div class="search-box-container">
+                        <input 
+                            type="text" 
+                            id="home-search" 
+                            class="home-search" 
+                            placeholder="Search the web..."
+                        >
+                        <button id="home-search-btn" class="home-search-btn">Search</button>
+                    </div>
+
+                    <div class="quick-links">
+                        <h3>Quick Links</h3>
+                        <div class="quick-links-grid" id="quick-links-grid">
+                            <a href="https://google.com" class="quick-link">
+                                <div class="link-icon">G</div>
+                                <div class="link-title">Google</div>
+                            </a>
+                            <a href="https://github.com" class="quick-link">
+                                <div class="link-icon">⚙</div>
+                                <div class="link-title">GitHub</div>
+                            </a>
+                            <a href="https://wikipedia.org" class="quick-link">
+                                <div class="link-icon">W</div>
+                                <div class="link-title">Wikipedia</div>
+                            </a>
+                            <a href="https://youtube.com" class="quick-link">
+                                <div class="link-icon">▶</div>
+                                <div class="link-title">YouTube</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Content Frame -->
+            <iframe id="content-frame" class="content-frame" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="display: none;"></iframe>
+        </div>
+    </div>
+
+    <!-- Add Bookmark Modal -->
+    <div id="bookmark-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Add Bookmark</h2>
+            <div class="form-group">
+                <label>Title:</label>
+                <input type="text" id="bookmark-title" class="form-input" placeholder="e.g., GitHub">
+            </div>
+            <div class="form-group">
+                <label>URL:</label>
+                <input type="text" id="bookmark-url" class="form-input" placeholder="e.g., https://github.com">
+            </div>
+            <div class="modal-buttons">
+                <button id="save-bookmark-btn" class="btn-primary">Save</button>
+                <button id="cancel-bookmark-btn" class="btn-secondary">Cancel</button>
+            </div>
         </div>
     </div>
 
